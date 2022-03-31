@@ -55,8 +55,14 @@ function finaliza(){
 
 //finalizacao pedido
 
+let t1=encodeURIComponent("Olá, gostaria de fazer o pedido:\n- Prato: ");
+let t2=encodeURIComponent("\n- Bebida: ");
+let t3=encodeURIComponent("\n- Sobremesa: ");
+let t4=encodeURIComponent("\nTotal: R$ 27,70");
+
+
 function finalizarPedido(){
     
-    alert("Olá, gostaria de pedir um combo: " + mainpratos + ", " + mainbebidas + " e " + mainsobremesas);
-
+    window.open("https://wa.me/+5547996993721?text="+t1+mainpratos+t2+mainbebidas+t3+mainsobremesas+t4);
+    
 }
