@@ -165,6 +165,20 @@ body{
 .prato{
     width: 100%;
 }
+/*icones de certinho*/
+.linha-preço{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.icone{
+    font-size: 15px;
+    height: 15px;
+    width: 15px;
+    border-radius: 7px;
+    color: green;
+    display: none;
+}
 
 
 /*------INFERIOR--------*/

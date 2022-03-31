@@ -32,12 +32,14 @@ function escolha(x,y){
         mainsobremesas=x;
     }
     
-
+    let z="i"+x;
     for(let i=0;i<y.length;i++){
         if(x==y[i]){
             document.getElementById(x).style.borderColor="green";
+            document.getElementById(z).style.display="block";
         }else{
             document.getElementById(y[i]).style.borderColor="white";
+            document.getElementById("i"+y[i]).style.display="none";
         }
     }
     finaliza();
