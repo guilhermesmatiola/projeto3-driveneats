@@ -157,10 +157,11 @@ body{
 }
 .itens-info{
     width: 144px;
+    height: 90px;
     margin-top: 8px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 .prato{
     width: 100%;

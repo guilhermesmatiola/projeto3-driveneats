@@ -15,21 +15,34 @@
 let mainpratos;
 let mainbebidas;
 let mainsobremesas;
+let precopratos
+let precobebidas
+let precosobremesas
+
 const Pratos=["frango","carne","pizza","vegano"];
+const valorpratos=["16.99", "18.99", "19.99","14.99"];
+
 const Bebidas=["coca","guarana","pepsi","chagelado"];
+const valorbebidas=["6.99", "5.99", "6.49","4.99"];
+
 const Sobremesas=["pudim","sorvete","torta","frutas"];
+const valorsobremesas=["3.99", "4.99", "3.49","2.99"];
+
 
 // recebe x=id do produto e y=tipo do produto
 function escolha(x,y){
 
     if(y==Pratos){
-        mainpratos=x;
+       // mainpratos=x;
+        mainpratos=String(x);
     }
     if(y==Bebidas){
-        mainbebidas=x;
+        // mainbebidas=x;
+        mainbebidas=String(x);
     }
     if(y==Sobremesas){
-        mainsobremesas=x;
+        // mainsobremesas=x;
+        mainsobremesas=String(x);
     }
     
     let z="i"+x;
@@ -37,6 +50,18 @@ function escolha(x,y){
         if(x==y[i]){
             document.getElementById(x).style.borderColor="green";
             document.getElementById(z).style.display="block";
+
+            if(y==Pratos){
+                precopratos=Number(valorpratos[i]);
+            }
+            if(y==Bebidas){
+                precobebidas=Number(valorbebidas[i]);
+            }
+            if(y==Sobremesas){
+                precosobremesas=Number(valorsobremesas[i]);
+            }
+
+
         }else{
             document.getElementById(y[i]).style.borderColor="white";
             document.getElementById("i"+y[i]).style.display="none";
@@ -54,17 +79,19 @@ function finaliza(){
     }
 }
 
-
 //finalizacao pedido
 
 let t1=encodeURIComponent("Olá, gostaria de fazer o pedido:\n- Prato: ");
 let t2=encodeURIComponent("\n- Bebida: ");
 let t3=encodeURIComponent("\n- Sobremesa: ");
-let t4=encodeURIComponent("\nTotal: R$ 27,70");
+let t4=encodeURIComponent("\nTotal: R$ ");
 
 
 function finalizarPedido(){
-    
-    window.open("https://wa.me/+5547996993721?text="+t1+mainpratos+t2+mainbebidas+t3+mainsobremesas+t4);
+    let valorfinal = (precopratos+precobebidas+precosobremesas);
+ //   alert(valorfinal);
+    valorfinal=valorfinal.toFixed(2);
+    valorfinal=encodeURIComponent(valorfinal);
+    window.open("https://wa.me/+5547996993721?text="+t1+mainpratos+t2+mainbebidas+t3+mainsobremesas+t4+valorfinal);
     
 }
