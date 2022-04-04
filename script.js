@@ -90,8 +90,12 @@ let t4=encodeURIComponent("\nTotal: R$ ");
 function finalizarPedido(){
     let valorfinal = (precopratos+precobebidas+precosobremesas);
  //   alert(valorfinal);
+    let nome=prompt("Qual seu nome?");
+    let endereco=prompt("Qual seu endereço?");
+    let t5=encodeURIComponent("\nNome: " + nome);
+    let t6=encodeURIComponent("\nEndereço: " + endereco);
     valorfinal=valorfinal.toFixed(2);
     valorfinal=encodeURIComponent(valorfinal);
-    window.open("https://wa.me/+5547996993721?text="+t1+mainpratos+t2+mainbebidas+t3+mainsobremesas+t4+valorfinal);
+    window.open("https://wa.me/+5547996993721?text="+t1+mainpratos+t2+mainbebidas+t3+mainsobremesas+t4+valorfinal+t5+t6);
     
 }
